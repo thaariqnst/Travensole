@@ -1,1 +1,6 @@
 Folder app ini berisi class utama dalam menjalankan aplikasi Travensole
+
+Travensole.java berisi:
+• menu utama (search flight, search hotel, book, cancel)
+• loop aplikasi
+• panggil manager
