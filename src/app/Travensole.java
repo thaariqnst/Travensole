@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 
+import manager.SearchManager;
 import util.MainUtil;
 
 public class Travensole {
@@ -13,6 +14,7 @@ public class Travensole {
     public static void search() {
         // PENJELASAN - Jika user pilih 1 - Cari Penerbangan/Hotel, Jalankan function/fitur search di sini
         System.out.println("search");
+        SearchManager.startSearch();
     };
 
     public static void openReservationList() {

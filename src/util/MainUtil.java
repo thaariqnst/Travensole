@@ -94,7 +94,7 @@ public class MainUtil {
         }
     }
 
-    private void clearTerminal() {
+    public void clearTerminal() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
