@@ -1,10 +1,11 @@
 package app;
 
 import java.util.Scanner;
-
+import manager.ReservationManager;  // Tambahkan import ini
 import util.MainUtil;
 
 public class Travensole {
+     private static Scanner scanner = new Scanner(System.in);
     // ALUR - mulai aplikasi dengan klik "Run" di bawah
     public static void main(String[] args) throws Exception {
         showHomeScreen();
@@ -16,8 +17,13 @@ public class Travensole {
     };
 
     public static void openReservationList() {
-        // PENJELASAN - Jika user pilih 2 - Lihat Pesanan Saya, Jalankan function/fitur openReservationList/showAll di sini
-        System.out.println("openReservationList");
+    	 ReservationManager.seeAllReservation();
+         
+    	// PENJELASAN - Jika user pilih 2 - Lihat Pesanan Saya, Jalankan function/fitur openReservationList/showAll di sini
+         System.out.println("Tekan Enter untuk kembali ke menu utama...");
+         scanner.nextLine();
+         showHomeScreen();  // Kembali ke menu utama
+         
     };
 
     public static void cancelReservation() {
