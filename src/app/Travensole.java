@@ -2,7 +2,6 @@ package app;
 
 import java.util.Scanner;
 import manager.ReservationManager;  // Tambahkan import ini
-import manager.SearchManager;
 import util.MainUtil;
 import data.DataManager; // Import DataManager
 import model.Flight;     // Import Model Flight
