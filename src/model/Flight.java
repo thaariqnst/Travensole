@@ -8,8 +8,8 @@ public class Flight extends TravelItem {
 
     public Flight(String flightNumber, String airlineName, String origin, String destination, String date, int availableSeats, double price) {
         this.id = flightNumber; 
-        this.name = airlineName;
-        this.price = price;
+        this.name = airlineName; 
+        this.price = price;      
         this.origin = origin;
         this.destination = destination;
         this.date = date;

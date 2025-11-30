@@ -2,7 +2,11 @@ package app;
 
 import java.util.Scanner;
 import manager.ReservationManager;  // Tambahkan import ini
+import manager.SearchManager;
 import util.MainUtil;
+import data.DataManager; // Import DataManager
+import model.Flight;     // Import Model Flight
+import model.Hotel;      // Import Model Hotel
 
 public class Travensole {
      private static Scanner scanner = new Scanner(System.in);
@@ -13,7 +17,74 @@ public class Travensole {
 
     public static void search() {
         // PENJELASAN - Jika user pilih 1 - Cari Penerbangan/Hotel, Jalankan function/fitur search di sini
-        System.out.println("search");
+        Scanner sc = new Scanner(System.in); // Scanner lokal untuk method search
+        
+        System.out.println("\n=== PENCARIAN TRAVENSOLE ===");
+        System.out.println("1. Cari Penerbangan");
+        System.out.println("2. Cari Hotel");
+        System.out.print("Pilih kategori (1/2): ");
+        
+        int type = 0;
+        try {
+            type = sc.nextInt();
+            sc.nextLine(); // membersihkan buffer newline
+        } catch (Exception e) {
+            System.out.println("Input tidak valid.");
+            return;
+        }
+
+        if (type == 1) {
+            // LOGIC PENCARIAN FLIGHT
+            System.out.println("\n--- Cari Penerbangan ---");
+            System.out.print("Kota Asal: ");
+            String origin = sc.nextLine();
+            System.out.print("Kota Tujuan: ");
+            String destination = sc.nextLine();
+            System.out.print("Tanggal (YYYY-MM-DD): ");
+            String date = sc.nextLine();
+            System.out.print("Jumlah Penumpang: ");
+            int pax = sc.nextInt();
+
+            System.out.println("\n[Hasil Pencarian]");
+            boolean found = false;
+            for (Flight f : DataManager.flights) {
+                // Mencocokkan Asal dan Tujuan (Case insensitive)
+                if (f.getOrigin().equalsIgnoreCase(origin) && 
+                    f.getDestination().equalsIgnoreCase(destination)) {
+                    System.out.println(f.toString());
+                    found = true;
+                }
+            }
+            if (!found) System.out.println("Penerbangan tidak ditemukan.");
+
+        } else if (type == 2) {
+            // LOGIC PENCARIAN HOTEL
+            System.out.println("\n--- Cari Hotel ---");
+            System.out.print("Lokasi Kota: ");
+            String location = sc.nextLine();
+            System.out.print("Tanggal Check-in (YYYY-MM-DD): ");
+            String checkIn = sc.nextLine();
+            System.out.print("Tanggal Check-out (YYYY-MM-DD): ");
+            String checkOut = sc.nextLine();
+            System.out.print("Jumlah Tamu: ");
+            int guests = sc.nextInt();
+
+            System.out.println("\n[Hasil Pencarian]");
+            boolean found = false;
+            for (Hotel h : DataManager.hotels) {
+                // Mencocokkan Lokasi (Case insensitive)
+                if (h.getLocation().equalsIgnoreCase(location)) {
+                    System.out.println(h.toString());
+                    found = true;
+                }
+            }
+            if (!found) System.out.println("Hotel tidak ditemukan.");
+            
+        } else {
+            System.out.println("Pilihan kategori salah.");
+        }
+        
+        // Tidak menutup scanner (sc.close()) di sini agar System.in tidak tertutup untuk method lain
     };
 
     public static void openReservationList() {
@@ -24,11 +95,13 @@ public class Travensole {
          scanner.nextLine();
          showHomeScreen();  // Kembali ke menu utama
          
+        // PENJELASAN - Jika user pilih 2 - Lihat Pesanan Saya, Jalankan function/fitur openReservationList/showAll di sini
+        System.out.println("Fitur lihat pesanan belum tersedia.");
     };
 
     public static void cancelReservation() {
         // PENJELASAN - Jika user pilih 3 - Batalkan Reservasi, Jalankan function/fitur pembatalan reservasi di sini
-        System.out.println("cancelReservation");
+        System.out.println("Fitur pembatalan belum tersedia.");
     }
 
     public static void exit() {
@@ -102,7 +175,7 @@ public class Travensole {
             case 3:
                 // PENJELASAN - Jika user pilih 3 - Batalkan Reservasi
                 // Cancel Reservation
-
+                cancelReservation();
                 break;
 
             case 0:

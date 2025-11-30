@@ -11,7 +11,7 @@ public class DataManager {
     static {
         // DATA PENERBANGAN (25 Item)
         // Format: No Penerbangan, Maskapai, Asal, Tujuan, Tanggal, Kursi, Harga
-            
+      
         // Garuda Indonesia
         flights.add(new Flight("GA101", "Garuda Indonesia", "Jakarta", "Bali", "2025-12-01", 150, 1900000));
         flights.add(new Flight("GA102", "Garuda Indonesia", "Jakarta", "Surabaya", "2025-12-01", 120, 1200000));
