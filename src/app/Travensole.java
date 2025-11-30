@@ -1,17 +1,15 @@
 package app;
 
 import java.util.Scanner;
-<<<<<<< Updated upstream
-
+import manager.ReservationManager;  // Tambahkan import ini
 import manager.SearchManager;
-=======
->>>>>>> Stashed changes
 import util.MainUtil;
 import data.DataManager; // Import DataManager
 import model.Flight;     // Import Model Flight
 import model.Hotel;      // Import Model Hotel
 
 public class Travensole {
+     private static Scanner scanner = new Scanner(System.in);
     // ALUR - mulai aplikasi dengan klik "Run" di bawah
     public static void main(String[] args) throws Exception {
         showHomeScreen();
@@ -19,10 +17,6 @@ public class Travensole {
 
     public static void search() {
         // PENJELASAN - Jika user pilih 1 - Cari Penerbangan/Hotel, Jalankan function/fitur search di sini
-<<<<<<< Updated upstream
-        // System.out.println("search");
-        SearchManager.initSearch();
-=======
         Scanner sc = new Scanner(System.in); // Scanner lokal untuk method search
         
         System.out.println("\n=== PENCARIAN TRAVENSOLE ===");
@@ -91,10 +85,16 @@ public class Travensole {
         }
         
         // Tidak menutup scanner (sc.close()) di sini agar System.in tidak tertutup untuk method lain
->>>>>>> Stashed changes
     };
 
     public static void openReservationList() {
+    	 ReservationManager.seeAllReservation();
+         
+    	// PENJELASAN - Jika user pilih 2 - Lihat Pesanan Saya, Jalankan function/fitur openReservationList/showAll di sini
+         System.out.println("Tekan Enter untuk kembali ke menu utama...");
+         scanner.nextLine();
+         showHomeScreen();  // Kembali ke menu utama
+         
         // PENJELASAN - Jika user pilih 2 - Lihat Pesanan Saya, Jalankan function/fitur openReservationList/showAll di sini
         System.out.println("Fitur lihat pesanan belum tersedia.");
     };
