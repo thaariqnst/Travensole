@@ -1,11 +1,10 @@
 package manager;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.Scanner;
-
-import model.*; 
+import model.*;
 import data.DataManager;
 
 public class ReservationManager {
@@ -134,5 +133,6 @@ public class ReservationManager {
             System.out.print(r.getCustomerName() + " | ");
             System.out.println(r.getDetail());
         }
+
     }
 }
