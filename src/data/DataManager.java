@@ -8,6 +8,7 @@ import model.Hotel;
 public class DataManager {
     public static List<Flight> flights = new ArrayList<>();
     public static List<Hotel> hotels = new ArrayList<>();
+
     static {
         // DATA PENERBANGAN (25 Item)
         // Format: No Penerbangan, Maskapai, Asal, Tujuan, Tanggal, Kursi, Harga
@@ -52,7 +53,6 @@ public class DataManager {
 
         // DATA HOTEL (25 Item)
         // Format: ID, Nama Hotel, Lokasi, CheckIn, CheckOut, Tamu, Harga
-        // Note: Semua CheckIn 2025-12-01, CheckOut diset +1 atau +2 hari 
 
         // Jakarta
         hotels.add(new Hotel("HT01", "Hotel Mulia", "Jakarta", "2025-12-01", "2025-12-02", 2, 3000000));

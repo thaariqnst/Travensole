@@ -1,7 +1,8 @@
 package model;
 
-// Menggunakan Sealed Class sesuai permintaan soal 
+// Sealed class untuk memastikan hanya FlightReservation & HotelReservation yang dapat extend
 public sealed abstract class Reservation permits FlightReservation, HotelReservation {
+
     protected double confirmationNo;
     protected String customerName;
 
@@ -10,8 +11,14 @@ public sealed abstract class Reservation permits FlightReservation, HotelReserva
         this.customerName = customerName;
     }
 
-    public double getConfirmationNumber() { return confirmationNo; }
-    public String getCustomerName() { return customerName; }
-    
-    public abstract String getDetail(); // Abstract method
+    public double getConfirmationNumber() {
+        return confirmationNo;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    // Setiap subclass wajib memberi detail sesuai jenis reservasi
+    public abstract String getDetail();
 }

@@ -1,10 +1,14 @@
 package app;
 
 import java.util.Scanner;
-import manager.ReservationManager;
+import manager.ReservationManager;  
 import util.MainUtil;
+import data.DataManager; 
+import model.Flight;     
+import model.Hotel;      
 
 public class Travensole {
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -30,13 +34,13 @@ public class Travensole {
                 
                 switch (choice) {
                     case 1:
-                        ReservationManager.handleBooking(); // Panggil manager
+                        ReservationManager.handleBooking(); 
                         break;
                     case 2:
-                        ReservationManager.seeAllReservation(); // Panggil manager
+                        ReservationManager.seeAllReservation(); 
                         break;
                     case 3:
-                        ReservationManager.cancelReservation(); // Panggil manager
+                        ReservationManager.cancelReservation(); 
                         break;
                     case 0:
                         System.out.println("Terima kasih telah menggunakan Travensole!");
@@ -44,10 +48,10 @@ public class Travensole {
                     default:
                         System.out.println("Pilihan tidak valid.");
                 }
+
             } catch (Exception e) {
-                // Exception Handling sesuai syarat 
                 System.out.println("Input harus berupa angka!");
-                scanner.nextLine(); 
+                scanner.nextLine();
             }
         }
     }
