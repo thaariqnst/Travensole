@@ -6,6 +6,11 @@ public abstract class TravelItem {
     protected String name;
     protected double price;
 
-    public String getId() {return id; }
+    public String getId() { return id; }
+    
+    // --- TAMBAHKAN INI ---
+    public String getName() { return name; }
+    // ---------------------
+
     public double getPrice() { return price; }
 }
